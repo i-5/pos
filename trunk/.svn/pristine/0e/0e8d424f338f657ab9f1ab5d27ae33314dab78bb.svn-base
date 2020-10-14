@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA22B16B1417300300D8A505 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA22B16A1417300300D8A505 /* UIKit.framework */; };
+		AA22B16D1417300300D8A505 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA22B16C1417300300D8A505 /* Foundation.framework */; };
+		AA22B16F1417300300D8A505 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA22B16E1417300300D8A505 /* CoreGraphics.framework */; };
+		AA22B1751417300300D8A505 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA22B1731417300300D8A505 /* InfoPlist.strings */; };
+		AA22B1771417300300D8A505 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA22B1761417300300D8A505 /* main.m */; };
+		AA22B17B1417300300D8A505 /* CupRamenTimerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA22B17A1417300300D8A505 /* CupRamenTimerAppDelegate.m */; };
+		AA22B17E1417300300D8A505 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22B17C1417300300D8A505 /* MainWindow.xib */; };
+		AA22B1811417300300D8A505 /* CupRamenTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA22B1801417300300D8A505 /* CupRamenTimerViewController.m */; };
+		AA22B1841417300300D8A505 /* CupRamenTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22B1821417300300D8A505 /* CupRamenTimerViewController.xib */; };
+		AA42A9DA1421FE6E0090E219 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = AA42A9D91421FE6E0090E219 /* Icon-72.png */; };
+		AA6ABCC0141DC95500B201D0 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6ABCBF141DC95500B201D0 /* iAd.framework */; };
+		AAC0AEAA141C637100FB57D6 /* cup_noodle_op4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEA5141C637100FB57D6 /* cup_noodle_op4.jpg */; };
+		AAC0AEAB141C637100FB57D6 /* cup_noodle_op2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEA6141C637100FB57D6 /* cup_noodle_op2.jpg */; };
+		AAC0AEAD141C637100FB57D6 /* cup_noodle_op3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEA8141C637100FB57D6 /* cup_noodle_op3.jpg */; };
+		AAC0AEAE141C637100FB57D6 /* cup_noodle_op.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEA9141C637100FB57D6 /* cup_noodle_op.jpg */; };
+		AAC0AEB0141C683400FB57D6 /* cup_noodle_op1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEAF141C683400FB57D6 /* cup_noodle_op1.jpg */; };
+		AAC0AEB2141C70C800FB57D6 /* cup_noodle_ok1.wav in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEB1141C70C800FB57D6 /* cup_noodle_ok1.wav */; };
+		AAC0AEB4141CA5EB00FB57D6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC0AEB3141CA5EB00FB57D6 /* AudioToolbox.framework */; };
+		AAC0AEB6141CDA4E00FB57D6 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC0AEB5141CDA4D00FB57D6 /* Icon.png */; };
+		AAD7253B141B6B98001647D2 /* cup_noodle_bk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAD7253A141B6B98001647D2 /* cup_noodle_bk.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA22B1661417300300D8A505 /* Noodle: Ready!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Noodle: Ready!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA22B16A1417300300D8A505 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AA22B16C1417300300D8A505 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA22B16E1417300300D8A505 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AA22B1721417300300D8A505 /* CupRamenTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CupRamenTimer-Info.plist"; sourceTree = "<group>"; };
+		AA22B1741417300300D8A505 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA22B1761417300300D8A505 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA22B1781417300300D8A505 /* CupRamenTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CupRamenTimer-Prefix.pch"; sourceTree = "<group>"; };
+		AA22B1791417300300D8A505 /* CupRamenTimerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CupRamenTimerAppDelegate.h; sourceTree = "<group>"; };
+		AA22B17A1417300300D8A505 /* CupRamenTimerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CupRamenTimerAppDelegate.m; sourceTree = "<group>"; };
+		AA22B17D1417300300D8A505 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		AA22B17F1417300300D8A505 /* CupRamenTimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CupRamenTimerViewController.h; sourceTree = "<group>"; };
+		AA22B1801417300300D8A505 /* CupRamenTimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CupRamenTimerViewController.m; sourceTree = "<group>"; };
+		AA22B1831417300300D8A505 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CupRamenTimerViewController.xib; sourceTree = "<group>"; };
+		AA42A9D91421FE6E0090E219 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		AA6ABCBF141DC95500B201D0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		AA8D2EB1142219B000F5D463 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = /Users/ipsw/Desktop/Dev/CupRamenTimer/CupRamenTimer/ja.lproj/CupRamenTimerViewController.xib; sourceTree = "<absolute>"; };
+		AA8D2EB2142219B000F5D463 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = /Users/ipsw/Desktop/Dev/CupRamenTimer/CupRamenTimer/ja.lproj/InfoPlist.strings; sourceTree = "<absolute>"; };
+		AA8D2EB3142219B000F5D463 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = /Users/ipsw/Desktop/Dev/CupRamenTimer/CupRamenTimer/ja.lproj/MainWindow.xib; sourceTree = "<absolute>"; };
+		AA8D2EB4142219B500F5D463 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "/Users/ipsw/Desktop/Dev/CupRamenTimer/CupRamenTimer/zh-Hant.lproj/CupRamenTimerViewController.xib"; sourceTree = "<absolute>"; };
+		AA8D2EB5142219B500F5D463 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "/Users/ipsw/Desktop/Dev/CupRamenTimer/CupRamenTimer/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		AA8D2EB6142219B500F5D463 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "/Users/ipsw/Desktop/Dev/CupRamenTimer/CupRamenTimer/zh-Hant.lproj/MainWindow.xib"; sourceTree = "<absolute>"; };
+		AAC0AEA5141C637100FB57D6 /* cup_noodle_op4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup_noodle_op4.jpg; sourceTree = "<group>"; };
+		AAC0AEA6141C637100FB57D6 /* cup_noodle_op2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup_noodle_op2.jpg; sourceTree = "<group>"; };
+		AAC0AEA8141C637100FB57D6 /* cup_noodle_op3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup_noodle_op3.jpg; sourceTree = "<group>"; };
+		AAC0AEA9141C637100FB57D6 /* cup_noodle_op.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup_noodle_op.jpg; sourceTree = "<group>"; };
+		AAC0AEAF141C683400FB57D6 /* cup_noodle_op1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup_noodle_op1.jpg; sourceTree = "<group>"; };
+		AAC0AEB1141C70C800FB57D6 /* cup_noodle_ok1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cup_noodle_ok1.wav; sourceTree = "<group>"; };
+		AAC0AEB3141CA5EB00FB57D6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AAC0AEB5141CDA4D00FB57D6 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		AAD7253A141B6B98001647D2 /* cup_noodle_bk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cup_noodle_bk.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA22B1631417300200D8A505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6ABCC0141DC95500B201D0 /* iAd.framework in Frameworks */,
+				AAC0AEB4141CA5EB00FB57D6 /* AudioToolbox.framework in Frameworks */,
+				AA22B16B1417300300D8A505 /* UIKit.framework in Frameworks */,
+				AA22B16D1417300300D8A505 /* Foundation.framework in Frameworks */,
+				AA22B16F1417300300D8A505 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA22B15B1417300200D8A505 = {
+			isa = PBXGroup;
+			children = (
+				AA22B1701417300300D8A505 /* CupRamenTimer */,
+				AA22B1691417300300D8A505 /* Frameworks */,
+				AA22B1671417300300D8A505 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA22B1671417300300D8A505 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA22B1661417300300D8A505 /* Noodle: Ready!.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA22B1691417300300D8A505 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA6ABCBF141DC95500B201D0 /* iAd.framework */,
+				AAC0AEB3141CA5EB00FB57D6 /* AudioToolbox.framework */,
+				AA22B16A1417300300D8A505 /* UIKit.framework */,
+				AA22B16C1417300300D8A505 /* Foundation.framework */,
+				AA22B16E1417300300D8A505 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA22B1701417300300D8A505 /* CupRamenTimer */ = {
+			isa = PBXGroup;
+			children = (
+				AAC0AEA5141C637100FB57D6 /* cup_noodle_op4.jpg */,
+				AAC0AEB5141CDA4D00FB57D6 /* Icon.png */,
+				AAC0AEB1141C70C800FB57D6 /* cup_noodle_ok1.wav */,
+				AAC0AEAF141C683400FB57D6 /* cup_noodle_op1.jpg */,
+				AAC0AEA6141C637100FB57D6 /* cup_noodle_op2.jpg */,
+				AA42A9D91421FE6E0090E219 /* Icon-72.png */,
+				AAC0AEA8141C637100FB57D6 /* cup_noodle_op3.jpg */,
+				AAC0AEA9141C637100FB57D6 /* cup_noodle_op.jpg */,
+				AAD7253A141B6B98001647D2 /* cup_noodle_bk.jpg */,
+				AA22B1791417300300D8A505 /* CupRamenTimerAppDelegate.h */,
+				AA22B17A1417300300D8A505 /* CupRamenTimerAppDelegate.m */,
+				AA22B17C1417300300D8A505 /* MainWindow.xib */,
+				AA22B17F1417300300D8A505 /* CupRamenTimerViewController.h */,
+				AA22B1801417300300D8A505 /* CupRamenTimerViewController.m */,
+				AA22B1821417300300D8A505 /* CupRamenTimerViewController.xib */,
+				AA22B1711417300300D8A505 /* Supporting Files */,
+			);
+			path = CupRamenTimer;
+			sourceTree = "<group>";
+		};
+		AA22B1711417300300D8A505 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA22B1721417300300D8A505 /* CupRamenTimer-Info.plist */,
+				AA22B1731417300300D8A505 /* InfoPlist.strings */,
+				AA22B1761417300300D8A505 /* main.m */,
+				AA22B1781417300300D8A505 /* CupRamenTimer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA22B1651417300200D8A505 /* Noodle: Ready! */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA22B1871417300300D8A505 /* Build configuration list for PBXNativeTarget "Noodle: Ready!" */;
+			buildPhases = (
+				AA22B1621417300200D8A505 /* Sources */,
+				AA22B1631417300200D8A505 /* Frameworks */,
+				AA22B1641417300200D8A505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Noodle: Ready!";
+			productName = CupRamenTimer;
+			productReference = AA22B1661417300300D8A505 /* Noodle: Ready!.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA22B15D1417300200D8A505 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = AA22B1601417300200D8A505 /* Build configuration list for PBXProject "CupRamenTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA22B15B1417300200D8A505;
+			productRefGroup = AA22B1671417300300D8A505 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA22B1651417300200D8A505 /* Noodle: Ready! */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA22B1641417300200D8A505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA22B1751417300300D8A505 /* InfoPlist.strings in Resources */,
+				AA22B17E1417300300D8A505 /* MainWindow.xib in Resources */,
+				AA22B1841417300300D8A505 /* CupRamenTimerViewController.xib in Resources */,
+				AAD7253B141B6B98001647D2 /* cup_noodle_bk.jpg in Resources */,
+				AAC0AEAA141C637100FB57D6 /* cup_noodle_op4.jpg in Resources */,
+				AAC0AEAB141C637100FB57D6 /* cup_noodle_op2.jpg in Resources */,
+				AAC0AEAD141C637100FB57D6 /* cup_noodle_op3.jpg in Resources */,
+				AAC0AEAE141C637100FB57D6 /* cup_noodle_op.jpg in Resources */,
+				AAC0AEB0141C683400FB57D6 /* cup_noodle_op1.jpg in Resources */,
+				AAC0AEB2141C70C800FB57D6 /* cup_noodle_ok1.wav in Resources */,
+				AAC0AEB6141CDA4E00FB57D6 /* Icon.png in Resources */,
+				AA42A9DA1421FE6E0090E219 /* Icon-72.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA22B1621417300200D8A505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA22B1771417300300D8A505 /* main.m in Sources */,
+				AA22B17B1417300300D8A505 /* CupRamenTimerAppDelegate.m in Sources */,
+				AA22B1811417300300D8A505 /* CupRamenTimerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA22B1731417300300D8A505 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA22B1741417300300D8A505 /* en */,
+				AA8D2EB2142219B000F5D463 /* ja */,
+				AA8D2EB5142219B500F5D463 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA22B17C1417300300D8A505 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA22B17D1417300300D8A505 /* en */,
+				AA8D2EB3142219B000F5D463 /* ja */,
+				AA8D2EB6142219B500F5D463 /* zh-Hant */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		AA22B1821417300300D8A505 /* CupRamenTimerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA22B1831417300300D8A505 /* en */,
+				AA8D2EB1142219B000F5D463 /* ja */,
+				AA8D2EB4142219B500F5D463 /* zh-Hant */,
+			);
+			name = CupRamenTimerViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA1C6CFE14208B2200CAA5AA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_AFTER_BUILD = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		AA1C6CFF14208B2200CAA5AA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CupRamenTimer/CupRamenTimer-Prefix.pch";
+				INFOPLIST_FILE = "CupRamenTimer/CupRamenTimer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		AA22B1851417300300D8A505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_AFTER_BUILD = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		AA22B1861417300300D8A505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_AFTER_BUILD = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA22B1881417300300D8A505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CupRamenTimer/CupRamenTimer-Prefix.pch";
+				INFOPLIST_FILE = "CupRamenTimer/CupRamenTimer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA22B1891417300300D8A505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CupRamenTimer/CupRamenTimer-Prefix.pch";
+				INFOPLIST_FILE = "CupRamenTimer/CupRamenTimer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA22B1601417300200D8A505 /* Build configuration list for PBXProject "CupRamenTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA22B1851417300300D8A505 /* Debug */,
+				AA22B1861417300300D8A505 /* Release */,
+				AA1C6CFE14208B2200CAA5AA /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Distribution;
+		};
+		AA22B1871417300300D8A505 /* Build configuration list for PBXNativeTarget "Noodle: Ready!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA22B1881417300300D8A505 /* Debug */,
+				AA22B1891417300300D8A505 /* Release */,
+				AA1C6CFF14208B2200CAA5AA /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Distribution;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA22B15D1417300200D8A505 /* Project object */;
+}

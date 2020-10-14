@@ -1,0 +1,286 @@
+//
+//  CupRamenTimerViewController.m
+//  CupRamenTimer
+//
+//  Created by 子民 駱 on 9/7/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "CupRamenTimerViewController.h"
+
+@implementation CupRamenTimerViewController
+@synthesize timeLabel;
+@synthesize imageView;
+@synthesize bannerView;
+
+- (BOOL) isiPad
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+- (int)getBannerHeight:(UIDeviceOrientation)orientation {
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        return 32;
+    } else {
+        return 50;
+    }
+}
+
+- (int)getBannerHeight {
+    return [self getBannerHeight:[UIDevice currentDevice].orientation];
+}
+
+- (void)playAnimatedOpeniing
+{
+    if ([self isiPad ]) {
+        self.imageView.frame = CGRectMake(99, 396, 556, 660); 
+    }
+    
+    self.imageView.alpha = 0.1;
+    self.imageView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    
+    [UIView animateWithDuration:3.0
+                     animations:^{
+                         self.imageView.alpha = 1.0;
+                         self.imageView.transform = CGAffineTransformMakeScale(1.0, 1.0); 
+                     }
+     ];    
+}
+
+- (void)playAnimatedImage
+{
+    NSArray *cupNoodleOpenImages = [NSArray arrayWithObjects:
+                                    [UIImage imageNamed:@"cup_noodle_op.jpg"],
+                                    [UIImage imageNamed:@"cup_noodle_op1.jpg"],
+                                    [UIImage imageNamed:@"cup_noodle_op2.jpg"],
+                                    [UIImage imageNamed:@"cup_noodle_op3.jpg"],
+                                    [UIImage imageNamed:@"cup_noodle_op4.jpg"],
+                                    nil];
+    
+
+    UIImageView *cupNoodleOpenAnimatedView = [[UIImageView alloc]initWithFrame:CGRectMake(25, 150, 263, 316)];    
+    
+    if ([self isiPad ]) {
+        
+        cupNoodleOpenAnimatedView.frame = CGRectMake(99, 365, 556, 660); 
+        
+        if (self.splitViewController.interfaceOrientation == UIInterfaceOrientationPortrait || self.splitViewController.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown){
+            
+            cupNoodleOpenAnimatedView.center = CGPointMake(384, 512);
+        
+        } else if (self.splitViewController.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.splitViewController.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
+            
+            cupNoodleOpenAnimatedView.center = CGPointMake(512, 384);
+        
+        }
+    }
+    
+    cupNoodleOpenAnimatedView.animationImages = cupNoodleOpenImages;
+    cupNoodleOpenAnimatedView.animationDuration = 3.0; 
+    cupNoodleOpenAnimatedView.animationRepeatCount = 0; 
+    [cupNoodleOpenAnimatedView startAnimating];
+    [self.view addSubview:cupNoodleOpenAnimatedView];
+    
+}
+
+- (void)playReminder
+{
+    SystemSoundID pmph;
+    id sndpath = [[NSBundle mainBundle] 
+                  pathForResource:@"cup_noodle_ok1" 
+                  ofType:@"wav" 
+                  inDirectory:@"/"];
+    CFURLRef baseURL = (CFURLRef) [[NSURL alloc] initFileURLWithPath:sndpath];
+    AudioServicesCreateSystemSoundID (baseURL, &pmph);
+    AudioServicesPlaySystemSound(pmph);	
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    [(NSURL *)baseURL release];
+}
+
+- (void)createBannerView 
+{	
+
+    bannerView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    
+    bannerView.requiredContentSizeIdentifiers = [NSSet setWithObjects:
+                                                 ADBannerContentSizeIdentifierPortrait,	
+                                                 ADBannerContentSizeIdentifierLandscape, nil];
+    bannerView.delegate = self;
+    bannerView.frame = CGRectOffset(bannerView.frame, 0, -[self getBannerHeight]);
+    bannerView.hidden = TRUE; 
+    
+    [self.view bringSubviewToFront:bannerView];
+    [self.view addSubview:bannerView]; 
+    [bannerView release];
+}
+
+- (void) kickStartTimer 
+{
+    startTime = [NSDate timeIntervalSinceReferenceDate];
+    self.timeLabel.text = @"03:00";
+    
+    if ([self isiPad]) {
+        
+        self.timeLabel.frame = CGRectMake(290, 252, 738, 400);
+        self.timeLabel.font = [UIFont fontWithName:@"Arial" size: 74.0];
+        [self.timeLabel sizeToFit];
+        
+        if (self.splitViewController.interfaceOrientation == UIInterfaceOrientationPortrait || self.splitViewController.interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown){
+            
+            self.timeLabel.center = CGPointMake(384, 512);
+            
+        } else if (self.splitViewController.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.splitViewController.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
+            
+            self.timeLabel.center = CGPointMake(512, 384);
+            
+        }
+        
+    }
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target: self
+                                   selector:@selector(updateTime:)
+                                   userInfo:nil
+                                    repeats:YES];     
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+- (void)updateTime:(NSTimer *)timer {
+    
+    NSTimeInterval time = [NSDate timeIntervalSinceReferenceDate] - startTime;
+    
+    int timeLeft = ceil(60.0 * kTimerInterval - time);
+    
+    self.timeLabel.text = [NSString stringWithFormat:@"%02d:%02d", timeLeft / 60, timeLeft % 60];
+    
+    if (timeLeft < 1) {
+        [timer invalidate];
+        [imageView removeFromSuperview];
+        [self playAnimatedImage];
+        [self playReminder];        
+    }
+}
+
+- (void)goHome
+{
+    exit(0);
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
+    // Loading the Ad banner
+    [self createBannerView];
+    
+    // Loading the timer and kick start on it
+    [self kickStartTimer];
+    
+    // Loading the animation  
+    [self playAnimatedOpeniing];    
+    
+    [super viewDidLoad];
+    
+	if (&UIApplicationDidEnterBackgroundNotification != NULL) {
+		[[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(goHome)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+	}
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    NSLog(@"ADBannerView bannerViewDidLoadAd is triggered, ad will be displaying.");
+    if (bannerView.isHidden) {
+        [UIView beginAnimations:@"animateAdBannerShow" context:NULL];
+        bannerView.frame = CGRectOffset(bannerView.frame, 0, [self getBannerHeight]);
+        bannerView.hidden = FALSE; 
+        [UIView commitAnimations];
+    }
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"ADBannerView didFailToReceiveAdWithError: %d, %@, %@",
+		  [error code],
+		  [error domain],
+		  [error localizedDescription]);
+    if (!bannerView.isHidden) {
+        [UIView beginAnimations:@"animateAdBannerHide" context:NULL];
+        bannerView.frame = CGRectOffset(bannerView.frame, 0, -[self getBannerHeight]);
+        bannerView.hidden = TRUE;
+        [UIView commitAnimations];
+    }
+}
+
+- (void)viewDidUnload
+{
+    [self setTimeLabel:nil];
+    [self setImageView:nil];
+    [self setBannerView:nil];
+    
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (void)changeBannerOrientation:(UIInterfaceOrientation)toOrientation {
+    if (UIInterfaceOrientationIsLandscape(toOrientation)) {
+        if (&ADBannerContentSizeIdentifierLandscape != nil) 
+            bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;    
+        else    
+            bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier480x32; 
+    } else {
+        if (&ADBannerContentSizeIdentifierPortrait != nil) 
+            bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+        else
+            bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
+    }    
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{    
+    return YES;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    if (bannerView) {
+        [self changeBannerOrientation:toInterfaceOrientation];
+    }
+}
+
+- (void)dealloc {
+    
+    if (bannerView) {
+        bannerView.delegate = nil;
+        [bannerView release];
+    }
+    
+    [timeLabel release];
+    [imageView release];
+    [super dealloc];
+}
+@end

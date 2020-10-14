@@ -1,0 +1,25 @@
+//
+//  CupRamenTimerViewController.h
+//  CupRamenTimer
+//
+//  Created by 子民 駱 on 9/7/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <iAd/ADBannerView.h>
+
+#define kTimerInterval 3.0
+
+@interface CupRamenTimerViewController : UIViewController <ADBannerViewDelegate>{
+    ADBannerView *bannerView;
+    UILabel *timeLabel;
+    UIImageView *imageView;
+    NSTimeInterval startTime;
+}
+
+@property (nonatomic, retain) IBOutlet UILabel *timeLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) ADBannerView *bannerView;
+@end
